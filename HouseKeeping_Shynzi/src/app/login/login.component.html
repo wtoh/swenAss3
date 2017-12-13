@@ -1,0 +1,20 @@
+<main role="main">
+  <div class="jumbotron">
+    <div class="col-sm-8 mx-auto">
+      <div class="container">
+        
+              <form class="form-signin">
+                <h2 class="form-signin-heading">Sign In</h2>
+                <br>
+                <label for="inputID" class="sr-only">Staff ID</label>
+                <input [(ngModel)]="inputID" name="inputID" type="id" id="inputID" class="form-control" placeholder="Staff ID" required="" autofocus="">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input [(ngModel)]="inputPW" name="inputPW" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="signIn()">Sign in</button>
+              </form>
+        
+            </div> <!-- /container -->
+    </div>
+  </div>
+</main>
