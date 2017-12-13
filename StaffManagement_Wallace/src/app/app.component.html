@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Staff Management</title>
+
+  <!-- Custom styles for this template -->
+  <link href="./app.component.css" rel="stylesheet">
+  <style type="text/css"></style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" id="navBrand">Delonix Regia</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div *ngIf="loggedIn" class="collapse navbar-collapse" id="navbarResponsive" hidden=true>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" (click)="logout()">Logout</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <form>
+      <div *ngIf="!loggedIn" class="form-row" id="loginForm">
+        <div class="col" id="idTextField">
+          <label for="inputID" class="sr-only">ID</label>
+          <input type="text" id="inputID" class="form-control" placeholder="User ID" required="" autofocus="" [(ngModel)]="inputID"
+            name="inputID">
+        </div>
+        <div class="col">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" [(ngModel)]="inputPassword"
+            name="inputPassword">
+        </div>
+        <div class="col">
+          <button *ngIf="!loading" class="btn btn-primary" type="submit" id="loginButton" (click)="login()">
+            <span class="glyphicon glyphicon-log-in"></span>Login</button>
+          <div *ngIf="loading" class="loader"></div>
+        </div>
+      </div>
+    </form>
+  </nav>
+
+  <main role="main" class="container">
+
+    <div class="starter-template">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+  <!-- /.container -->
+
+
+
+</body>
+
+</html>
