@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Horizontal form</h2>
+  <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="roomno">Room no:</label>
+      <div class="col-sm-10">
+        <input #no type="text" class="form-control" id="roomno" placeholder="Enter the room no." name="roomno">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="roomno">Booked or not?</label>
+      <div class="col-sm-10">
+        <input #book type="text" class="form-control" id="available" placeholder="Enter yes or no" name="available">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="roomCheck(no.value,book.value)">Submit</button>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="reset" class="btn btn-default">Reset</button>
+      </div>
+    </div>
+  </form>
+</div>
